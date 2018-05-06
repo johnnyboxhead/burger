@@ -11,5 +11,5 @@ var connection = mysql.createConnection({
 connection.connect(function(err){
     if (err) throw err;
 })
-
-module.exports.connection
+//exporting for our ORM to use
+module.exports = connection
