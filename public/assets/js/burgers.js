@@ -23,15 +23,15 @@ $(function(){
     });
     $(".burgerbutton").on("click", function(){
         console.log("this is working!")
+        var id = $(this).data("id");
+        var devoured = 1
+        var newDevouredState = {
+            devoured: devoured
+        }
 
-        var updatedBurger = {
-            burger_name: $("#bu").val().trim(),
-            devoured: 0
-            };
-
-        $.ajax("/api/addburger", {
+        $.ajax("/api/updateburger" + id, {
         type: "PUT",
-        data: newBurger
+        data: newDevouredState
         }).then(
         function() {
             console.log("updated burger");
